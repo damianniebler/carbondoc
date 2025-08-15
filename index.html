@@ -37,13 +37,13 @@
 
     /* --- Header image banner --- */
     .heroimg{
-      width:100%;
-      height:min(56vh, 720px);        /* tall, but not full-screen */
-      object-fit:cover;
-      object-position:top;
-      display:block;
-      filter:saturate(.95) contrast(1.05) brightness(.92);
-    }
+  width:100%;
+  height:40vh;                /* now only 40% of viewport height */
+  object-fit:cover;
+  object-position:center top; /* top of the image, centered horizontally */
+  display:block;
+  filter:saturate(.95) contrast(1.05) brightness(.92);
+}
     /* subtle overlay to tie it together */
     .hero-wrap{
       position:relative;
