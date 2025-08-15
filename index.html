@@ -25,25 +25,37 @@
       --glass-stroke:rgba(255,255,255,.15);
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      background:var(--bg);
-      color:var(--ink);
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans";
-      overflow-x:hidden;
-      line-height:1.45;
-    }
+    html,body{height:100%; margin: 0;}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans";
+  overflow-x: hidden;
+  line-height: 1.45;
+
+  /* Added for layout */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* ensures full viewport height */
+}
+
+
+    main {
+  flex: 1;
+}
+
 
     /* --- Header image banner --- */
-    .heroimg{
-  width:100%;
-  height:40vh;                /* now only 40% of viewport height */
-  object-fit:cover;
-  object-position:center top; /* top of the image, centered horizontally */
-  display:block;
-  filter:saturate(.95) contrast(1.05) brightness(.92);
+.heroimg {
+  width: 100%;
+  height: 40vh;
+  object-fit: cover;
+  object-position: center top;
+  filter: saturate(.95) contrast(1.05) brightness(.92);
 }
+
+
     /* subtle overlay to tie it together */
     .hero-wrap{
       position:relative;
