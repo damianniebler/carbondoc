@@ -1,218 +1,744 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CARBON CURE — Coming Soon</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Richard Drucker - Regenerative Health Pioneer</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Animate.css for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-  <meta name="description" content="CARBON CURE — a new book by Dr. Richard Drucker. Official site coming soon." />
-  <meta name="theme-color" content="#0b1215" />
-  <meta property="og:title" content="CARBON CURE — Coming Soon" />
-  <meta property="og:description" content="A new book by Dr. Richard Drucker. Official site coming soon." />
-  <meta property="og:image" content="https://carbondoc.com/assets/hero.jpg" />
-  <meta property="og:type" content="website" />
-
-  <style>
-    :root{
-      --bg:#0b1215;           /* deep teal/charcoal */
-      --ink:#eaf2f4;          /* soft white */
-      --ink-dim:#b8c6c9;      /* muted copy */
-      --primary:#9ad0d9;      /* Drucker-ish icy teal */
-      --primary-soft:#cfe8ec; /* lighter teal for gradient */
-      --glass:rgba(255,255,255,.06);
-      --glass-stroke:rgba(255,255,255,.15);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%; margin: 0;}
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--ink);
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans";
-  overflow-x: hidden;
-  line-height: 1.45;
-
-  /* Added for layout */
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* ensures full viewport height */
-}
+    <!-- Google Fonts - IBM Plex Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
 
 
-    main {
-  flex: 1;
-}
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --secondary-blue: #0A5EB0;
+            --cyan-color: #22d3ee;
+            --white: #ffffff;
+            --dark-blue: #0f172a;
+            --dark-text: #202020;
+            --blue-600: #0A5EB0;
+            --blue-800: #0a549e;
+            --blue-900: #1e3a8a;
+            /* Gradient for text or background */
+            --text-gradient:  linear-gradient(90deg, #0360D9 44.23%, #00C9F7 60.1%);
+            --hover-cta-gradient:  linear-gradient(90deg, #00C9F7 0%, #0360D9 99.04%);
+        }
 
+        * {
+            transition: all 0.3s ease;
+        }
 
-    /* --- Header image banner --- */
-.heroimg {
-  width: 100%;
-  height: 50vh;
-  object-fit: cover;
-  object-position: center top;
-  filter: saturate(.95) contrast(1.05) brightness(.92);
-}
+        a, a:hover {
+            text-decoration: none;
+        }
+        
+        img{
+            max-width: 100%;
+        }
 
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: "IBM Plex Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: normal;
+            font-style: normal;
+            font-variation-settings:
+                "wdth" 100;
+        }
 
-    /* subtle overlay to tie it together */
-    .hero-wrap{
-      position:relative;
-    }
-    .hero-wrap::after{
-      content:"";
-      position:absolute; inset:0;
-      background:linear-gradient(to bottom, rgba(11,18,21,0) 0%, rgba(11,18,21,.65) 80%, rgba(11,18,21,.9) 100%);
-      pointer-events:none;
-    }
+        .playfair {
+            font-family: "Playfair", serif !important;
+        }
 
-    /* --- Content --- */
-    .wrap{
-      max-width:1100px;
-      width:100%;
-      padding: clamp(20px, 4vw, 44px);
-      margin: 0 auto;
-      text-align:center;
-    }
-    .kicker{
-      font:600 clamp(14px,2.2vw,22px) Oswald, sans-serif;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      color:var(--ink);
-      opacity:.9;
-      margin-top: clamp(-10px, -6vh, -30px); /* pull up towards the image a bit */
-    }
-    h1{
-      margin: clamp(6px, 1.6vw, 14px) 0 0;
-      font:700 clamp(44px,8vw,110px)/.95 Oswald, sans-serif;
-      text-transform:uppercase;
-      letter-spacing:.10em;
-    }
-    .byline{
-      margin-top:8px;
-      font:400 clamp(13px,1.8vw,18px) Oswald, sans-serif;
-      letter-spacing:.16em;
-      color:var(--ink-dim);
-      text-transform:uppercase;
-    }
-    .sub{
-      margin: clamp(14px, 2.4vw, 26px) auto clamp(8px, 1.6vw, 18px);
-      max-width:800px;
-      color:var(--ink-dim);
-      font-size: clamp(14px, 2vw, 18px);
-    }
+        .section_container {
+            padding: 80px 0;
+        }
+        
+        .heroSec {
+            background-image: url('/assets/images/hero_bg.png');
+            background-color: #000;
+            position: relative;
+        }
 
-    /* --- Progress bar --- */
-    .progress{
-      margin: clamp(16px,2.6vw,28px) auto 0;
-      width:min(560px, 84vw);
-      display:grid; gap:10px; place-items:center;
-    }
-    .track{
-      width:100%; height:14px; border-radius:999px; position:relative;
-      background:linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.05));
-      border:1px solid rgba(255,255,255,.18);
-      overflow:hidden; box-shadow:inset 0 0 0 1px rgba(0,0,0,.2);
-    }
-    .bar{
-      height:100%; width:0%;
-      background:linear-gradient(90deg, var(--primary), var(--primary-soft));
-      border-right:1px solid rgba(255,255,255,.45);
-      box-shadow:0 0 18px rgba(154,208,217,.35), inset 0 0 22px rgba(255,255,255,.2);
-      transition:width .9s cubic-bezier(.2,.9,.2,1);
-    }
-    .percent{
-      font:600 12px/1 Inter, sans-serif; letter-spacing:.18em; color:var(--ink-dim);
-    }
+        .heroSec::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            background:  linear-gradient(162.67deg, rgba(3, 96, 217, 0.078) 4.46%, rgba(3, 96, 217, 0.384) 50.23%, rgba(3, 96, 217, 0.21) 78.33%);
+            background-blend-mode: normal, overlay;
+        }
 
-    /* --- CTA --- */
-    .cta{ display:flex; justify-content:center; margin-top: clamp(18px, 3vw, 34px); }
-    .btn{
-      appearance:none; border:1px solid var(--glass-stroke); color:var(--ink);
-      background:linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.04));
-      padding:14px 22px; border-radius:14px; text-decoration:none;
-      font:600 14px/1 Inter, sans-serif; letter-spacing:.08em; text-transform:uppercase;
-      transition:transform .12s ease, border-color .12s ease; backdrop-filter: blur(4px);
-    }
-    .btn:hover{ transform: translateY(-1px); border-color: rgba(255,255,255,.35); }
+        .contact-bar {
+            background-color: var(--blue-600);
+            padding: 12px 0;
+        }
 
-    /* --- Footer --- */
-    .fineprint{
-      padding:18px clamp(14px,3vw,28px) 28px;
-      color:var(--ink-dim); font-size:13px; letter-spacing:.02em;
-      display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px;
-      border-top:1px solid rgba(255,255,255,.08);
-      background:linear-gradient(0deg, rgba(0,0,0,.35), rgba(0,0,0,0));
-    }
-    .fineprint a{ color:var(--ink); opacity:.9; text-decoration:none; border-bottom:1px dotted rgba(255,255,255,.25) }
-    .fineprint a:hover{ opacity:1 }
+        .contact-info {
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+        }
 
-    @media (max-width:560px){
-      .fineprint{flex-direction:column; text-align:center}
-    }
-  </style>
+        .contact-info i {
+            margin-right: 8px;
+        }
+
+        .contact-btn {
+            background-color: var(--cyan-color);
+            color: var(--dark-blue);
+            border: none;
+            padding: 8px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        
+
+        .contact-btn:hover {
+            background-color: #06d6f0;
+            color: var(--white);
+        }
+
+        .main-content {
+            padding: 4rem 0;
+        }
+
+        .hero-title {
+            font-size: 70px;
+            font-weight: bold;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlightText {
+            background: var(--text-gradient);
+            -webkit-background-clip: text;
+                    background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .border_text {
+            color: transparent; 
+            -webkit-text-stroke: 1px white; 
+            text-stroke: 1px white; 
+        }
+
+        .credentials {
+            color: white;
+            font-size: 1.125rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .credentials .highlight {
+            color: var(--cyan-color);
+            font-weight: 600;
+        }
+
+        .value-prop {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            line-height: 1.6;
+            max-width: 400px;
+            margin-bottom: 2rem;
+        }
+
+        .badge_text {
+            border-color: #ffffff59 !important;
+            background: #ffffff1f;
+        }
+
+        .cta-button {
+            background-color: var(--secondary-blue);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(90deg, #0360D9 0%, #00C9F7 99.04%);
+        }
+
+        .cta-button:hover {
+            background: var(--hover-cta-gradient);
+        }
+
+        .cta-button:hover {
+            background-color: #3b82f6;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .cta-button i {
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover i {
+            transform: translateX(4px);
+        }
+
+        .image-container {
+            position: relative;
+            /*background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 24px;*/
+        }
+
+        .doctor-image {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            object-fit: cover;
+        }
+
+        .available-badge {
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            background-color: #10b981;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .available-dot {
+            width: 8px;
+            height: 8px;
+            background-color: white;
+            border-radius: 50%;
+        }
+
+        .speaking-badge {
+            position: absolute;
+            bottom: 24px;
+            right: 24px;
+            background-color: var(--blue-600);
+            color: white;
+            padding: 16px 24px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .speaking-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .speaking-text {
+            font-size: 0.75rem;
+            font-weight: 500;
+            opacity: 0.9;
+            letter-spacing: 0.5px;
+        }
+
+        /* About Section */
+        .about_section {
+            background-image: url('/assets/images/Dr-Drucker.png');
+            background-size: 1380px auto;
+            background-position: bottom center;
+            background-repeat: no-repeat;
+        }
+
+        .heading_2 {
+            font-size: 40px;
+            font-weight: bold;
+            color: var(--dark-text);
+        }
+
+        .subTitle {
+            color: var(--blue-600);
+            font-size: 18px;
+            font-weight: 700;
+            position: relative;
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+            gap:5px;
+            margin-bottom: 10px;
+        }
+
+        .subTitle::before, .subTitle::after {
+            content: "";
+            width: 40px;
+            height: 2px;
+            display: inline-block;
+            background-color: var(--blue-600);
+        }
+
+        .subTitle.white::before, .subTitle.white::after {
+            background-color: var(--white);
+        }
+
+        .bg_icon {
+            padding: 12px;
+            border-radius: 6px;
+            background: var(--blue-600);
+        }
+
+        .bg_icon:hover {
+            background: var(--blue-800);
+        }
+
+        .title_text {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .subtitle_text {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .lead_text {
+            font-size: 18px;
+        }
+
+        .object_image.right {
+            right: -27px;
+            top: -56px;
+        }
+
+        .z-0 {
+            z-index: 0;
+        }
+
+        .z-1 {
+            z-index: 1;
+        }
+
+        .icon_box .content_side, .speakingTopic_header .title_text {
+            max-width: calc(100% - 70px);
+        }
+
+        /* Best Selling Section */
+        .besSelling_section {
+            background-image: url('/assets/images/bs-bg.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .besSelling_section ul {
+            max-width: 510px;
+        }
+
+        /* Speaking Topics Section */
+        .section_header p{
+            max-width: 787px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .text_with_bg {
+            color: #0360D9;
+            padding: 12px 20px;
+            border: 1px solid #0360D9;
+            border-radius: 6px;
+            background: #E8FBFF;
+            max-width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 32px;
+        }
+
+        .speaking_topicContent {
+            padding: 24px 32px;
+            background: #F4FAFF;
+            border-radius: 24px;
+            box-shadow: 0px 12px 24px -10px #00000021;
+            border: none;
+        }
+
+        .speaking_topicContent .speakingTopic_header {
+            border-bottom: 1px solid #E8E8E8;
+            padding-bottom: 20px;
+        }
+        
+        .opacity-80 {
+            opacity: 0.8;
+        }
+
+        .icon_item {
+            background: #fff;
+            border-radius: 50%;
+            padding: 13px;
+        }
+
+        @media (max-width: 991px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .main-content {
+                padding: 2rem 0;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .contact-bar .d-flex {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .contact-info-group {
+                flex-direction: column;
+                gap: 1rem !important;
+            }
+
+            .section_container {
+                padding: 2rem 0;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Top header image -->
-  <div class="hero-wrap">
-    <img class="heroimg" src="assets/hero.jpg" alt="Carbon Cure — Book Release header image">
-  </div>
-
-  <!-- Main content -->
-  <main class="wrap" aria-labelledby="title">
-    <div class="kicker">Book Release</div>
-    <h1 id="title">Carbon Cure</h1>
-    <div class="byline">By Dr. Richard Drucker</div>
-
-    <p class="sub">
-      We’re putting the finishing touches on the official site.
-    </p>
-
-    <!-- Progress -->
-    <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-      <div class="track">
-        <div class="bar" id="bar"></div>
-      </div>
-      <div class="percent" id="pct">0%</div>
+    <!-- Top Contact Bar -->
+    <div class="contact-bar">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex gap-4 contact-info-group">
+                    <div class="contact-info">
+                        <i class="bi bi-telephone"></i>
+                        972-881-2344
+                    </div>
+                    <div class="contact-info">
+                        <i class="bi bi-envelope"></i>
+                        Info@Druckerlabs.Com
+                    </div>
+                </div>
+                <button class="contact-btn">
+                    Contact Us
+                </button>
+            </div>
+        </div>
     </div>
 
-    <!-- Single CTA -->
-    <div class="cta">
-      <a class="btn" href="https://druckerlabs.com" target="_blank" rel="noopener">Visit druckerlabs.com</a>
-    </div>
-  </main>
+    <!-- Hero Section -->
+    <section class="main-content heroSec section_container">
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="row align-items-center g-5">
+                <!-- Left Content -->
+                <div class="col-lg-6 col-xxl-7">
+                    <div class="hero-content">
+                        <h1 class="hero-title mb-3">
+                            <span class="highlightText border_text">Dr. Richard Drucker</span>
+                        </h1>
+                        <span class="badge_text text-white fs-5 inline-block mb-3 border border-light rounded px-2">AKA "The Carbon Doc"</span>
+                        <div class="credentials">
+                            <div class="mb-2 mt-3">
+                                <strong>Bestselling Author</strong> | <strong>Founder of</strong>
+                                <span class="highlightText"><strong>Carbon-bond Technology™</strong></span> |
+                            </div>
+                            <div>
+                                <strong>Regenerative Health Pioneer</strong>
+                            </div>
+                        </div>
 
-  <!-- Footer -->
-  <footer class="fineprint">
-    <span>© <span id="y"></span> Drucker Labs. Site under construction.</span>
-    <span>Follow us:
-      <a href="https://www.facebook.com/DruckerLabs/" target="_blank" rel="noopener">Facebook</a> ·
-      <a href="https://www.instagram.com/druckerlabs/" target="_blank" rel="noopener">Instagram</a> ·
-      <a href="https://www.youtube.com/@Drucker_Labs" target="_blank" rel="noopener">YouTube</a>
-    </span>
-  </footer>
+                        <div class="value-prop">
+                            <strong>Value Proposition:</strong> Dr. Drucker reveals how carbon - the language of 
+                            healing - unlocks your body's innate blueprint to restore vitality, energy, 
+                            and true regeneration.
+                        </div>
 
-  <script>
-    // year
-    document.getElementById('y').textContent = new Date().getFullYear();
+                        <a href="#" class="cta-button">
+                            <span>Invite Dr. Drucker to Speak</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
 
-    // Progress animation — set your target here
-    const TARGET = 86; // e.g., 86% done
-    const bar = document.getElementById('bar');
-    const pct = document.getElementById('pct');
-    const prg = document.querySelector('.progress');
-    let v = 0;
+                <!-- Right Content - Image with Badges -->
+                <div class="col-lg-6 col-xxl-5">
+                    <div class="image-container">
+                        <!-- Available Badge -->
+                        <!-- <div class="available-badge animate__animated animate__fadeInLeftBig">
+                            <div class="available-dot"></div>
+                            <span>AVAILABLE</span>
+                        </div> -->
 
-    const step = () => {
-      const delta = Math.max(0.5, (TARGET - v) * 0.08); // ease-out toward target
-      v = Math.min(TARGET, +(v + delta).toFixed(1));
-      bar.style.width = v + '%';
-      pct.textContent = v + '%';
-      prg.setAttribute('aria-valuenow', v);
-      if (v < TARGET) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  </script>
+                        <!-- Main Image -->
+                        <img src="/assets/images/hero_image.png" 
+                             alt="Dr. Richard Drucker" 
+                             class="doctor-image">
+
+                        <!-- Speaking Events Badge -->
+                        <!-- <div class="speaking-badge animate__animated animate__fadeInRightBig">
+                            <div class="speaking-number">500+</div>
+                            <div class="speaking-text">SPEAKING EVENTS</div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section_container about_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-5 col-lg-6">
+                    <div class="image_with_element position-relative pe-4">
+                        <img src="/assets/images/about_dd_simple.png"  alt="Dr. Richard Drucker"  class="position-relative doctor-image z-1">
+                        <img src="/assets/images/object_image.png" alt="" class="object_image position-absolute z-0 right" style=""> 
+                    </div>
+                </div>
+                <div class="col-xxl-7 col-lg-6 ps-md-5">
+                    <div class="subTitle">
+                        <span class="playfair">About Dr. Drucker</span>
+                    </div>
+                    <h2 class="heading_2 mb-4">
+                        About <span class="highlightText">Dr. Richard Drucker</span> M.S., <br>N.D., Ph.D.
+                    </h2>
+                    <div class="icon_box align-items-start d-flex gap-3 mb-4">
+                        <span class="bg_icon">
+                            <img src="/assets/images/from-crisis-to-discovery.svg" alt="">
+                        </span>
+                        <div class="content_side">
+                            <h5 class="title_text">
+                                From Crisis to Discovery
+                            </h5>
+                            <p class="lead_text">Dr. Richard Drucker's pioneering work began with a deeply personal fight for survival. Faced with a life-threatening immune diagnosis that had tragically claimed his mother, he found traditional medicine's answers insufficient. This crisis ignited a relentless quest to understand the root cause of illness, leading to a foundational realization: true healing isn't about fighting disease, but about restoring what’s missing from the body. </p>
+                        </div>
+                    </div>
+                    <div class="icon_box align-items-start d-flex gap-3 mb-4">
+                        <span class="bg_icon">
+                            <img src="/assets/images/a-scientific-breakthrough.svg" alt="">
+                        </span>
+                        <div class="content_side">
+                            <h5 class="title_text">
+                                A Scientific Breakthrough
+                            </h5>
+                            <p class="lead_text">This mission led him to found Drucker Labs and, after years of intensive research, develop the revolutionary Carbon-bond Technology™ - a proprietary process that mimics nature’s own nutrient delivery system. For over 25 years, his work has set new standards for nutritional integrity and bioavailability, creating globally-trusted formulations that are proven to restore health at the cellular level.</p>
+                        </div>
+                    </div>
+                    <div class="icon_box align-items-start d-flex gap-3">
+                        <span class="bg_icon">
+                            <img src="/assets/images/national-leadership.svg" alt="">
+                        </span>
+                        <div class="content_side">
+                            <h5 class="title_text">
+                                National Leadership & A Regenerative Mission
+                            </h5>
+                            <p class="lead_text mb-0">This mission led him to found Drucker Labs and, after years of intensive research, develop the revolutionary Carbon-bond Technology™ - a proprietary process that mimics nature’s own nutrient delivery system. For over 25 years, his work has set new standards for nutritional integrity and bioavailability, creating globally-trusted formulations that are proven to restore health at the cellular level.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Selling Section -->
+    <section class="section_container besSelling_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-7 col-lg-6 text-white pe-md-5">
+                    <div class="subTitle text-white white">
+                        <span class="playfair">Bestselling Book</span>
+                    </div>
+                    <h2 class="heading_2 mb-2 text-white">
+                        His Bestselling Book: <span class="highlightText text-uppercase">The Carbon Cure </span>
+                    </h2>
+                    <p class="lead_text pe-md-5">In his book, The Carbon Cure, Dr. Drucker reveals a revolutionary truth: true healing isn’t about fighting disease - it's about restoring what’s missing. He argues that carbon is not just part of the process; it is the language of healing.</p>
+                    <p class="lead_text pe-md-5">Born from his personal battle with a life-threatening illness, this book shows how modern practices have stripped this life-giving element from our bodies and our world. Carbon Cure empowers you to use nature's most fundamental molecule to reactivate your body's innate intelligence for vitality, energy, and freedom from chronic illness.</p>
+
+                    <h5 class="text-white title_text mt-4  mb-4">Inside, you will discover how to: </h5>
+                    <ul class="list-unstyled mt-4 mb-2">
+                        <li class="d-flex align-items-start mb-3 gap-2">
+                            <span class="icon_check">
+                                <img src="/assets/images/check-circle.svg" alt="">
+                            </span>
+                            <span>Understand why most supplements are ineffective and what crucial steps to take instead.</span>
+                        </li>
+                        <li class="d-flex align-items-start mb-3 gap-2">
+                            <span class="icon_check">
+                                <img src="/assets/images/check-circle.svg" alt="">
+                            </span>
+                            <span>Identify the subtle signs of organic nutrient deficiency in yourself and your loved ones.</span>
+                        </li>
+                        <li class="d-flex align-items-start mb-3 gap-2">
+                            <span class="icon_check">
+                                <img src="/assets/images/check-circle.svg" alt="">
+                            </span>
+                            <span>Reconnect your body’s fundamental electrical circuitry to unlock its true healing potential.</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="cta-button mt-4">
+                        <span>Order Your Copy Now</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="col-xxl-5 col-lg-6">
+                    <img src="/assets/images/best-selling-book.png"  alt="best selling book (Carbon Cure) image"  class="position-relative">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speaking Topics Section -->
+    <section class="section_container speakingTopics_section">
+        <div class="container">
+            <div class="section_header mb-5 pb-4">
+                <div class="subTitle text-center justify-content-center">
+                    <span class="playfair">Speaking Topics</span>
+                </div>
+                <h2 class="heading_2 mb-4 text-center">
+                    Signature <span class="highlightText">Speaking Topics</span>
+                </h2>
+                <p class="lead_text text-center">Dr. Drucker's presentations are more than just lectures; they are transformative experiences. Drawing from his personal healing journey and decades of scientific research, he delivers dynamic, science-backed keynotes that engage and inspire. </p>
+                <div class="text_with_bg text-center">
+                    All keynotes can be customized for your specific audience and are available in formats ranging from 30 to 90 minutes
+                </div>
+            </div>
+
+            <div class="speaking_topicContent card mb-4">
+                <div class="speakingTopic_header d-flex gap-4 align-items-center mb-4">
+                    <div class="icon_item">
+                        <img src="/assets/images/icon-1.svg" alt="">
+                    </div>
+                    <h5 class="title_text mb-0">
+                        The Carbon Cure: Unlocking Your Body's Innate Intelligence for Healing
+                    </h5>
+                </div>
+                <div class="speakingTopic_body">
+                    <p class="lead_text opacity-80 mb-4 pb-2">Based on his bestselling book, this keynote reveals why so many suffer from a silent epidemic of nutrient starvation and how carbon is the fundamental language of healing. Dr. Drucker shows how restoring organic, carbon-bonded nutrients reactivates the body's innate intelligence for detoxification, energy, and true regeneration.</p>
+
+                    <h5 class="subtitle_text mt-2  mb-4">Audience Takeaways:</h5>
+                    <ul class="list-unstyled mt-2 mb-2">
+                        <li class="d-flex align-items-start mb-3 gap-2">
+                            <span class="icon_check">
+                                <img src="/assets/images/check-circle-dark.svg" alt="">
+                            </span>
+                            <span class="opacity-80">Understand why traditional approaches often fail to address the root causes of chronic health issues.</span>
+                        </li>
+                        <li class="d-flex align-items-start mb-3 gap-2">
+                            <span class="icon_check">
+                                <img src="/assets/images/check-circle-dark.svg" alt="">
+                            </span>
+                            <span class="opacity-80">Identify the subtle signs of organic nutrient deficiency in yourself and your loved ones.</span>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <span class="icon_check">
+                                <img src="/assets/images/check-circle-dark.svg" alt="">
+                            </span>
+                            <span class="opacity-80">Reconnect your body’s fundamental electrical circuitry to unlock its true healing potential.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="speaking_topicContent card mb-4">
+                <div class="speakingTopic_header d-flex gap-4 align-items-center mb-4">
+                    <div class="icon_item">
+                        <img src="/assets/images/icon-2.svg" alt="">
+                    </div>
+                    <h5 class="title_text mb-0">
+                        From Fatigue to Full Throttle: Mastering Energy, Focus, and Immune Resilience
+                    </h5>
+                </div>
+                <div class="speakingTopic_body">
+                    <p class="lead_text opacity-80 mb-4 pb-2">Addressing the modern plagues of fatigue, brain fog, and weak immunity, Dr. Drucker explains how to revolutionize health at the cellular level. He provides a clear roadmap to recharge cellular energy, enhance cognitive function, and build a resilient immune system for a life of thriving, not just surviving. </p>
+
+                    <h5 class="subtitle_text mt-2  mb-4">Audience Takeaways:</h5>
+                    <ul class="list-unstyled mt-2 mb-2">
+                        <li class="d-flex align-items-start mb-3 gap-2">
+                            <span class="icon_check">
+                                <img src="/assets/images/check-circle-dark.svg" alt="">
+                            </span>
+                            <span class="opacity-80">Identify the hidden disruptors in modern life that deplete energy, clarity, and immune strength. </span>
+                        </li>
+                        <li class="d-flex align-items-start mb-3 gap-2">
+                            <span class="icon_check">
+                                <img src="/assets/images/check-circle-dark.svg" alt="">
+                            </span>
+                            <span class="opacity-80">Explore how carbon-bonded nutrients provide rapid, bioavailable support for mitochondrial and neurological health. </span>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <span class="icon_check">
+                                <img src="/assets/images/check-circle-dark.svg" alt="">
+                            </span>
+                            <span class="opacity-80">Gain actionable steps to boost natural energy, sharpen focus, and build a robust immune system. </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="speaking_topicContent card mb-4">
+                <div class="speakingTopic_header d-flex gap-4 align-items-center mb-4">
+                    <div class="icon_item">
+                        <img src="/assets/images/icon-3.svg" alt="">
+                    </div>
+                    <h5 class="title_text mb-0">
+                        People. Planet. Purpose.®: The Carbon Connection for a Regenerative Future
+                    </h5>
+                </div>
+                <div class="speakingTopic_body">
+                    <p class="lead_text opacity-80 mb-4 pb-2">Expanding on his core mission, Dr. Drucker reveals the profound link between human health and planetary well-being. He demonstrates how the same carbon deficiency harming our bodies is also devastating our soils, and shares innovative solutions that restore personal vitality while regenerating the Earth.</p>
+
+                    <h5 class="subtitle_text mt-2  mb-4">Audience Takeaways:</h5>
+                    <ul class="list-unstyled mt-2 mb-2">
+                        <li class="d-flex align-items-start mb-3 gap-2">
+                            <span class="icon_check">
+                                <img src="/assets/images/check-circle-dark.svg" alt="">
+                            </span>
+                            <span class="opacity-80">Recognize the direct link between depleted soils, nutrient-deficient food, and the global health crisis.</span>
+                        </li>
+                        <li class="d-flex align-items-start mb-3 gap-2">
+                            <span class="icon_check">
+                                <img src="/assets/images/check-circle-dark.svg" alt="">
+                            </span>
+                            <span class="opacity-80">Learn about innovative carbon-based technologies designed to heal both the human body and the Earth.</span>
+                        </li>
+                        <li class="d-flex align-items-start gap-2">
+                            <span class="icon_check">
+                                <img src="/assets/images/check-circle-dark.svg" alt="">
+                            </span>
+                            <span class="opacity-80">Be inspired to make conscious choices that contribute to personal and planetary wellness.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
