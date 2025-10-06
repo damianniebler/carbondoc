@@ -30,6 +30,7 @@
             --blue-600: #0A5EB0;
             --blue-800: #0a549e;
             --blue-900: #1e3a8a;
+            --bg-section: #F5FAFF;
             /* Gradient for text or background */
             --text-gradient:  linear-gradient(90deg, #0360D9 44.23%, #00C9F7 60.1%);
             --hover-cta-gradient:  linear-gradient(90deg, #00C9F7 0%, #0360D9 99.04%);
@@ -57,6 +58,10 @@
             font-style: normal;
             font-variation-settings:
                 "wdth" 100;
+        }
+
+        .section_bg_blueLite{
+            background-color: var(--bg-section);
         }
 
         .playfair {
@@ -90,6 +95,10 @@
             padding: 12px 0;
         }
 
+        .contact-info-group {
+            column-gap: 36px;
+        }
+
         .contact-info {
             color: white;
             font-size: 14px;
@@ -100,9 +109,22 @@
             margin-right: 8px;
         }
 
+        .contact-info-group .contact-info {
+            position: relative;
+        }
+
+        .contact-info-group .contact-info:not(:last-child)::after {
+            content: "";
+            width: 1px;
+            height: 100%;
+            background: #ffffff80;
+            position: absolute;
+            right: -18px;
+        }
+
         .contact-btn {
             background-color: var(--cyan-color);
-            color: var(--dark-blue);
+            color: #fff;
             border: none;
             padding: 8px 24px;
             border-radius: 6px;
@@ -154,10 +176,10 @@
             color: var(--cyan-color);
             font-weight: 600;
         }
-
+        
         .value-prop {
             color: rgba(255, 255, 255, 0.9);
-            font-size: 1rem;
+            font-size: 20px;
             line-height: 1.6;
             max-width: 400px;
             margin-bottom: 2rem;
@@ -371,6 +393,7 @@
             margin-left: auto;
             margin-right: auto;
             margin-top: 32px;
+            font-weight: 500;
         }
 
         .speaking_topicContent {
@@ -396,6 +419,164 @@
             padding: 13px;
         }
 
+        /* Video Section */
+        .cursor-pointer {
+            cursor: pointer;
+        }
+
+        .video_container {
+            border-radius: 32px;
+            overflow: hidden;
+        }
+
+        .bg_gradient {
+            background-color: #fff;
+            background: linear-gradient(339.63deg, rgba(0, 201, 247, 0) 48.96%, rgba(10, 94, 176, 0.46) 198.7%);
+        }
+
+        .content_box {
+            box-shadow: 0px 4px 12.7px 0px #0000001A;
+            padding: 32px;
+            border-radius: 12px;
+            gap: 10px;
+        }
+
+        .content_box .content_side p {
+            font-size: 24px;
+            line-height: 40px;
+            text-transform: capitalize;
+        }
+
+        .content_box .content_side span {
+            font-size: 20px;
+            line-height: 40px;
+            color:#0a5eb0;
+        }
+
+        /* Why Carbon Doc */
+
+        .subtitleNormal {
+            font-weight: 400;
+            font-size: 32px;
+            line-height: 150%;
+            text-align: center;
+            text-transform: capitalize;
+        }
+
+        .speaking_topicContentGray .lead_text {
+            font-size: 16px;
+        }
+
+        .speaking_topicContentGray {
+            background: #FAFAFA;
+            height: 100%;
+        }
+
+        .user_details {
+            gap: 14px;
+            margin-top: auto;
+            border-top: 1px solid #E8E8E8;
+            padding-top: 20px;
+        }
+
+        .user_details span {
+            font-size: 14px;
+            font-weight: 300;
+        }
+        .user_details p {
+            font-size: 18px;
+        }
+
+        .text-lite {
+            color: #202020;
+            opacity: 0.8;
+        }
+
+        /* Contact Us Section */
+        .contactForm {
+            box-shadow: 0px 12px 32.4px 0px #0000001A;
+            border-radius: 32px;
+            padding: 40px;
+            background: #fff;
+            height: 100%;
+        }
+
+        .contactForm .form-label {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .contactForm .form-control {
+            padding: 12px 15px;
+            font-size: 16px;
+            font-weight: 400;
+            background: #EEEEEE;
+            border: none;
+        }
+
+        .contactForm .form-control:focus, .contactForm .form-control:focus-visible {
+            outline: 0;
+            box-shadow: none;
+        }
+
+        .directInquiries {
+            background: #0A5EB0;
+            border-radius: 32px;
+            padding: 40px;
+            height: 100%;
+        }
+
+        .contact-infoBox .contact-info {
+            font-size: 18px;
+        }
+
+        .cstm-social-icons a {
+            color: #202020;
+            border: 1px solid #202020;
+            border-radius: 50%;
+            padding: 4px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .cstm-social-icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border-bottom: 1px solid #B9B9B9;
+            padding-bottom: 38px;
+            margin-bottom: 38px;
+        }
+
+        .footer_section  a {
+            color: #202020;
+        }
+
+        .footerMenu .footerMenu_item {
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+
+        .footerMenu {
+            gap: 36px;
+            display: flex;
+        }
+
+
+        .section_container  li .icon_check {
+            max-width: 24px;
+        }
+
+        .section_container  li span {
+            max-width: calc(100% - 34px);
+        }
+
+
         @media (max-width: 991px) {
             .hero-title {
                 font-size: 3rem;
@@ -404,25 +585,126 @@
             .main-content {
                 padding: 2rem 0;
             }
+
+            .content_box .content_side p, .content_box .content_side span {
+                font-size: 16px;
+                line-height: 26px;
+            }
+
+            .content_box {
+                padding: 20px;
+                margin-top: 12px;
+            }
         }
 
         @media (max-width: 767px) {
+            .lead_text {
+                font-size: 16px;
+            }
+
+            .heroSec  .row {
+                flex-direction: column-reverse;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .heading_2 {
+                font-size: 32px;
+            }
             .hero-title {
                 font-size: 2.5rem;
             }
             
+            .about_section {
+                background-image: none;
+            }
+
             .contact-bar .d-flex {
                 flex-direction: column;
                 gap: 1rem;
             }
+
+            .contact-bar .d-flex.contact-info-group {
+                column-gap: 20px;
+                flex-direction: row;
+            }
             
-            .contact-info-group {
-                flex-direction: column;
-                gap: 1rem !important;
+            .besSelling_section img {
+                width: 100%;
+                max-width: 450px;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+            }
+            
+            .section_container {
+                padding: 60px 0;
             }
 
-            .section_container {
-                padding: 2rem 0;
+            .contact-info-group .contact-info:not(:last-child)::after {
+                right: -10px;
+            }
+
+            .speaking_topicContentGray {
+                border: 1px solid #cbcaca;
+            }
+
+            .section_bg_blueLite .lead_text {
+                font-size: 14px;
+            }
+
+            .quote_image {
+                max-width: 30px;
+            }
+
+            .subtitleNormal {
+                font-size: 24px;
+            }
+
+            .directInquiries, .contactForm {
+                padding: 24px;
+            }
+
+            .speaking_topicContent {
+                padding: 20px;
+            }
+
+            .speaking_topicContent .speakingTopic_header {
+                align-items: flex-start !important;
+                flex-direction: column;
+                gap: 14px !important;
+            }
+
+            .speaking_topicContent .speakingTopic_header .title_text, .icon_box .content_side {
+                max-width: 100%;
+            }
+
+            .speaking_topicContent .speakingTopic_header .title_text {
+                font-size: 16px;
+            }
+
+            .subtitle_text {
+                margin-bottom: 14px !important;
+            }
+
+            .container-lg{
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+            .title_text {
+                font-size: 20px;
+            }
+
+            .cta-button {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .icon_box {
+                flex-direction: column;
             }
         }
     </style>
@@ -430,9 +712,9 @@
 <body>
     <!-- Top Contact Bar -->
     <div class="contact-bar">
-        <div class="container">
+        <div class="container-lg">
             <div class="d-flex justify-content-between align-items-center">
-                <div class="d-flex gap-4 contact-info-group">
+                <div class="d-flex contact-info-group">
                     <div class="contact-info">
                         <i class="bi bi-telephone"></i>
                         972-881-2344
@@ -442,7 +724,7 @@
                         Info@Druckerlabs.Com
                     </div>
                 </div>
-                <button class="contact-btn">
+                <button class="contact-btn d-md-block d-none">
                     Contact Us
                 </button>
             </div>
@@ -451,10 +733,10 @@
 
     <!-- Hero Section -->
     <section class="main-content heroSec section_container">
-        <div class="container position-relative" style="z-index: 2;">
+        <div class="container-lg position-relative" style="z-index: 2;">
             <div class="row align-items-center g-5">
                 <!-- Left Content -->
-                <div class="col-lg-6 col-xxl-7">
+                <div class="col-md-6 col-xxl-7">
                     <div class="hero-content">
                         <h1 class="hero-title mb-3">
                             <span class="highlightText border_text">Dr. Richard Drucker</span>
@@ -464,8 +746,6 @@
                             <div class="mb-2 mt-3">
                                 <strong>Bestselling Author</strong> | <strong>Founder of</strong>
                                 <span class="highlightText"><strong>Carbon-bond Technology™</strong></span> |
-                            </div>
-                            <div>
                                 <strong>Regenerative Health Pioneer</strong>
                             </div>
                         </div>
@@ -484,7 +764,7 @@
                 </div>
 
                 <!-- Right Content - Image with Badges -->
-                <div class="col-lg-6 col-xxl-5">
+                <div class="col-md-6 col-xxl-5">
                     <div class="image-container">
                         <!-- Available Badge -->
                         <!-- <div class="available-badge animate__animated animate__fadeInLeftBig">
@@ -510,20 +790,20 @@
 
     <!-- About Section -->
     <section class="section_container about_section">
-        <div class="container">
+        <div class="container-lg">
             <div class="row">
-                <div class="col-xxl-5 col-lg-6">
-                    <div class="image_with_element position-relative pe-4">
+                <div class="col-xxl-5 col-md-6">
+                    <div class="image_with_element position-relative pe-md-4">
                         <img src="/assets/images/about_dd_simple.png"  alt="Dr. Richard Drucker"  class="position-relative doctor-image z-1">
                         <img src="/assets/images/object_image.png" alt="" class="object_image position-absolute z-0 right" style=""> 
                     </div>
                 </div>
-                <div class="col-xxl-7 col-lg-6 ps-md-5">
+                <div class="col-xxl-7 col-md-6 ps-md-5 mt-md-0 mt-4 pt-md-0 pt-3">
                     <div class="subTitle">
                         <span class="playfair">About Dr. Drucker</span>
                     </div>
-                    <h2 class="heading_2 mb-4">
-                        About <span class="highlightText">Dr. Richard Drucker</span> M.S., <br>N.D., Ph.D.
+                    <h2 class="heading_2 mb-4 pe-md-5">
+                        About <span class="highlightText">Dr. Richard Drucker</span> M.S., N.D., Ph.D.
                     </h2>
                     <div class="icon_box align-items-start d-flex gap-3 mb-4">
                         <span class="bg_icon">
@@ -565,9 +845,9 @@
 
     <!-- Best Selling Section -->
     <section class="section_container besSelling_section">
-        <div class="container">
+        <div class="container-lg">
             <div class="row">
-                <div class="col-xxl-7 col-lg-6 text-white pe-md-5">
+                <div class="col-xxl-7 col-md-6 text-white pe-md-5">
                     <div class="subTitle text-white white">
                         <span class="playfair">Bestselling Book</span>
                     </div>
@@ -603,8 +883,8 @@
                         <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
-                <div class="col-xxl-5 col-lg-6">
-                    <img src="/assets/images/best-selling-book.png"  alt="best selling book (Carbon Cure) image"  class="position-relative">
+                <div class="col-xxl-5 col-md-6 ps-md-5 mt-md-0 mt-4">
+                    <img src="/assets/images/best-selling-book-ws.png"  alt="best selling book (Carbon Cure) image"  class="position-relative">
                 </div>
             </div>
         </div>
@@ -612,8 +892,8 @@
 
     <!-- Speaking Topics Section -->
     <section class="section_container speakingTopics_section">
-        <div class="container">
-            <div class="section_header mb-5 pb-4">
+        <div class="container-lg">
+            <div class="section_header mb-md-5 mb-3 pb-4">
                 <div class="subTitle text-center justify-content-center">
                     <span class="playfair">Speaking Topics</span>
                 </div>
@@ -736,7 +1016,248 @@
         </div>
     </section>
 
+    <!-- Dr Drucker in Action Section -->
+    <section class="section_container drDruckerAction_section section_bg_blueLite">
+        <div class="container-lg">
+            <div class="section_header mb-5">
+                <div class="subTitle text-center justify-content-center">
+                    <span class="playfair">Speaking Clips & Media</span>
+                </div>
+                <h2 class="heading_2 mb-4 text-center">
+                    See <span class="highlightText">Dr. Drucker In Action</span>
+                </h2>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-xxl-6 col-md-6 pe-md-4">
+                    <div class="video_container ratio ratio-16x9 mb-4 position-relative">
+                        <!-- <img src="/assets/images/video_thumbnail.png" alt="" class="img-fluid w-100"> -->
+                        <iframe src="https://www.youtube.com/embed/deZ9mzjtVcY" title="YouTube Shorts video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+                        </iframe>
+                        <!-- <img src="/assets/images/yt_play_icon.png" alt="" class="play_icon position-absolute top-50 start-50 translate-middle cursor-pointer" /> -->
+                    </div>
+                    <p class="lead_text opacity-80 text-center">Watch Dr. Drucker deliver his transformative message</p>
+                </div>
+                <div class="col-xxl-6 col-md-6 ps-md-4">
+                    <div class="content_box bg_gradient d-flex align-items-start">
+                        <img src="/assets/images/quote_icon.svg" alt="" class="quote_image" />
+                        <div class="content_side">
+                            <p class="lead_text fst-italic mb-0">“Healing begins by restoring what’s missing, not fighting what’s broken.”</p>
+                            <span class="mb-0">— Dr. Richard Drucker</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Why Dr Drucker Section -->
+    <section class="section_container whyDrDrucker_section">
+        <div class="container-lg">
+            <div class="section_header mb-5">
+                <div class="subTitle text-center justify-content-center">
+                    <span class="playfair">WHY Carbon Doc?</span>
+                </div>
+                <h2 class="heading_2 mb-0 text-center">
+                    Why the <span class="highlightText">Carbon Doc?</span>
+                </h2>
+                <h4 class="subtitleNormal">A Unique Voice in Health & Wellness</h4>
+
+                <p class="lead_text text-center">Dr. Drucker delivers more than a keynote; he offers a rare combination of personal experience, scientific authority, and national leadership that inspires lasting change. </p>
+            </div>
+            <div class="row mb-5">
+                <div class="col-lg-4 col-md-6 mb-lg-0 mb-4">
+                    <div class="speaking_topicContent speaking_topicContentGray card mb-4">
+                        <div class="speakingTopic_header d-flex gap-4 align-items-center mb-4">
+                            <div class="icon_item">
+                                <img src="/assets/images/heart_icon.svg" alt="">
+                            </div>
+                            <h5 class="subtitle_text mb-0">
+                                A Healer's Perspective
+                            </h5>
+                        </div>
+                        <div class="speakingTopic_body mb-4">
+                            <p class="lead_text opacity-80 mb-0 pb-2">Dr. Drucker brings real-world clinical experience to the stage, translating complex healing into actionable steps for every audience. His profound understanding of the body's innate ability to heal is truly unparalleled.</p>
+                        </div>
+                        <div class="user_details d-flex align-items-center">
+                            <img src="/assets/images/user_image.svg" alt="user icon Image" class="user_image" />
+                            <div class="user_info">
+                                <p class="lead_text mb-0 fw-semibold">John Doe</p>
+                                <span>Chief Medical Officer, Wellness Institute</span>
+                            </div>
+                        </div>
+                            
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-lg-0 mb-4">
+                    <div class="speaking_topicContent speaking_topicContentGray card mb-4">
+                        <div class="speakingTopic_header d-flex gap-4 align-items-center mb-4">
+                            <div class="icon_item">
+                                <img src="/assets/images/icon-1.svg" alt="">
+                            </div>
+                            <h5 class="subtitle_text mb-0">
+                                An Innovator's Authority
+                            </h5>
+                        </div>
+                        <div class="speakingTopic_body mb-4">
+                            <p class="lead_text opacity-80 mb-0 pb-2">Dr. Drucker's book is a must-read, and his talk brilliantly brings this revolutionary science to life, making it accessible and inspiring for all.</p>
+                        </div>
+                        <div class="user_details d-flex align-items-center">
+                            <img src="/assets/images/user_image.svg" alt="user icon Image" class="user_image" />
+                            <div class="user_info">
+                                <p class="lead_text mb-0 fw-semibold">John Doe</p>
+                                <span>Chief Medical Officer, Wellness Institute</span>
+                            </div>
+                        </div>
+                            
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 ">
+                    <div class="speaking_topicContent speaking_topicContentGray card mb-4">
+                        <div class="speakingTopic_header d-flex gap-4 align-items-center mb-4">
+                            <div class="icon_item">
+                                <img src="/assets/images/medal_icon.svg" alt="">
+                            </div>
+                            <h5 class="subtitle_text mb-0">
+                                A National Leader's Vision
+                            </h5>
+                        </div>
+                        <div class="speakingTopic_body mb-4">
+                            <p class="lead_text opacity-80 mb-0 pb-2">He was the highest-rated speaker at our event. Truly world-class, Dr. Drucker delivers a message that resonates deeply and inspires lasting change.</p>
+                        </div>
+                        <div class="user_details d-flex align-items-center">
+                            <img src="/assets/images/user_image.svg" alt="user icon Image" class="user_image" />
+                            <div class="user_info">
+                                <p class="lead_text mb-0 fw-semibold">John Doe</p>
+                                <span>Chief Medical Officer, Wellness Institute</span>
+                            </div>
+                        </div>
+                            
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-center text-lite">
+                Dr. Drucker's insights aren't just theory; they are forged from his personal battle with autoimmune disease and honed over 25 years of clinical success. He brings patient-tested protocols to the stage, revealing how to restore health from the cellular level up.
+            </p>
+            <p class="text-center text-lite">
+                As the bestselling author of "Carbon Cure" and the founder of the pioneering Carbon-bond Technology™, Dr. Drucker makes complex science accessible and actionable. He doesn't just share ideas—he provides the innovative tools and frameworks to put them into practice.
+            </p>
+            <p class="text-center text-lite">
+                As National President of the American Naturopathic Medical Association (ANMA), Dr. Drucker's influence shapes the future of natural health. His dynamic presentations deliver a powerful call to action, inspiring audiences to embrace a regenerative future for both personal and planetary well-being.
+            </p>
+        </div>
+    </section>
+
+    <!-- Book Dr Drucker Section -->
+    <section class="section_container bookDrDrucker_section" style="background: #F9F9F9;">
+        <div class="container-lg">
+            <div class="section_header mb-5">
+                <div class="subTitle text-center justify-content-center">
+                    <span class="playfair">Book Dr. Drucker</span>
+                </div>
+                <h2 class="heading_2 mb-4 text-center">
+                    Book <span class="highlightText">Dr. Drucker!</span>
+                </h2>
+                <p class="lead_text text-center">Ready to bring a powerful and transformative message to your audience? We are excited to partner with you to create an unforgettable experience.</p>
+
+                <span class="lead_text text-center d-block px-md-5">Please provide some details about your event in the form below. Our team is dedicated to a seamless booking process and will respond to all inquiries, typically within one business day.</span>
+                
+            </div>
+            <div class="row mb-5">
+                <div class="col-xxl-8 col-md-7">
+                    <div class="contactForm mb-md-0 mb-4">
+                        <h3 class="subtitleNormal fw-semibold text-start">Booking Inquiry Form </h3>
+                        <form action="#">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="Name" class="form-label">Name</label>
+                                    <input type="text" name="Name" class="form-control" placeholder="Your Full Name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="Email" class="form-label">E-Mail</label>
+                                    <input type="email" name="Email" class="form-control" placeholder="Your Email" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="organization" class="form-label">Organization</label>
+                                    <input type="text" name="organization" class="form-control" placeholder="Your Organization Name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="eventDate" class="form-label">Event Date(s):</label>
+                                    <input type="date" name="eventDate" class="form-control" placeholder="Event Date(s)" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="Message" class="form-label">Message</label>
+                                    <textarea class="form-control" rows="5" name="Message" placeholder="Please include details about your event, audience, and desired topic focus." required></textarea>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="cta-button mt-4 w-100 text-center justify-content-center fw-normal">
+                                        <span>SUBMIT INQUIRY</span>
+                                        <i class="bi bi-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-xxl-4 col-md-5 mt-md-0 mt-4 pt-md-0 pt-2">
+                    <div class="directInquiries">
+                        <img src="/assets/images/for_direct_inquiries.png" alt="" class="mb-2 mx-auto d-block" />
+                        <h3 class="subtitleNormal fw-semibold text-start text-white">For Direct Inquiries</h3>
+                        <p class="lead_text text-white mb-4">For media requests or if you prefer to contact us directly: </p>
+                        <div class="contact-infoBox mb-4 border-bottom border-white pb-4">
+                            <div class="contact-info mb-3">
+                                <i class="bi bi-telephone"></i>
+                                972-881-2344
+                            </div>
+                            <div class="contact-info">
+                                <i class="bi bi-envelope"></i>
+                                Info@Druckerlabs.Com
+                            </div>
+                        </div>
+                        <p class="lead_text text-white mb-0">We typically respond to all inquiries within one business day. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer Section -->
+    <footer class="footer_section section_container pb-4">
+        <div class="cstm-social-section container-lg">
+            <div class="cstm-container">
+                <p class="subtitleNormal text-uppercase fw-bold mb-4">JOIN THE MOVEMENT, WE'RE ON YOUR FAVORITE SOCIALS:</p>
+                <div class="cstm-social-icons pt-2">
+                
+                    <a href="https://www.facebook.com/DruckerLabs/" target="_blank" aria-label="Facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+
+                    <a href="https://www.youtube.com/@Drucker_Labs" target="_blank" aria-label="YouTube">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/druckerlabs/" target="_blank" aria-label="Instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                    <a href="https://www.tiktok.com/@drricharddrucker" target="_blank" aria-label="TikTok">
+                        <i class="bi bi-tiktok"></i>
+                    </a>
+
+                </div>
+            </div>
+            <div class="d-flex justify-content-md-between justify-content-center flex-wrap gap-3">
+                <div class="footerMenu">
+                    <a href="#" class="footerMenu_item">Our Story</a>
+                    <a href="#" class="footerMenu_item">FAQs</a>
+                    <a href="#" class="footerMenu_item">Subscribe & Save </a>
+                </div>
+                <p class="copyRight_text">
+                    Copyright © 2025 • <a href="#">Drucker Labs.</a>
+                </p>
+            </div>
+        </div>
+    </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
